@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.*?>
+
+<AnchorPane fx:id="rootPane" onMouseClicked="#btnClick" styleClass="componentEventPane" stylesheets="@ComponentStyles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="reminder.components.EventComponentFXMLController">
+   <children>
+      <HBox prefHeight="50.0" prefWidth="905.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="txtDate" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="70.0" styleClass="labelDateTime" text="Date">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin></Label>
+            <Label fx:id="txtTime" alignment="CENTER" maxHeight="1.7976931348623157E308" styleClass="labelDateTime" text="Time">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin></Label>
+            <Label fx:id="txtName" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="labelName" text="Name" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="txtRepeat" alignment="CENTER" maxHeight="1.7976931348623157E308" styleClass="labelSize70" text="Repeat">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="txtLocation" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="140.0" styleClass="labelLocationComment" text="Where" HBox.hgrow="NEVER">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="txtComments" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="146.0" styleClass="labelLocationComment" text="Comment" HBox.hgrow="NEVER">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+   </children>
+   <stylesheets>
+        <URL value="@ComponentStyles.css" />
+    </stylesheets>
+</AnchorPane>

@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.*?>
+
+<AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="755.0" prefWidth="1165.0" stylesheets="@components/ComponentStyles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="reminder.ReminderFXMLController">
+   <children>
+      <VBox layoutX="84.0" layoutY="34.0" prefHeight="755.0" prefWidth="1165.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                        <MenuItem mnemonicParsing="false" onAction="#btnLoad" text="Load" />
+                        <MenuItem mnemonicParsing="false" onAction="#btnSave" text="Save" />
+                    <MenuItem mnemonicParsing="false" text="Exit" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <SplitPane dividerPositions="0.5" orientation="VERTICAL" VBox.vgrow="ALWAYS">
+              <items>
+                  <SplitPane dividerPositions="0.44625967325881344">
+                    <items>
+                      <AnchorPane minHeight="100.0" minWidth="100.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <VBox layoutX="171.0" layoutY="158.0" prefHeight="516.0" prefWidth="568.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <ToolBar maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="200.0" VBox.vgrow="NEVER">
+                                      <items>
+                                        <Button mnemonicParsing="false" onAction="#btnAddReminder" text="+" textAlignment="CENTER">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font></Button>
+                                          <Label text="Reminders">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets left="10.0" />
+                                             </padding></Label>
+                                          <Label fx:id="txtRemindersCounter" text="(1)">
+                                             <font>
+                                                <Font size="10.0" />
+                                             </font>
+                                          </Label>
+                                          <Pane prefHeight="30.0" prefWidth="32.0" />
+                                          <CheckBox fx:id="chckActiveOnly" mnemonicParsing="false" onAction="#btnActiveOnly" text="Active only" />
+                                      </items>
+                                    </ToolBar>
+                                    <VBox>
+                                       <children>
+                                          <HBox maxHeight="20.0" minHeight="20.0" prefHeight="20.0" VBox.vgrow="ALWAYS">
+                                             <children>
+                                                <Pane maxHeight="1.7976931348623157E308" maxWidth="36.0" minWidth="36.0" prefWidth="36.0" />
+                                                <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Name" HBox.hgrow="ALWAYS" />
+                                                <Separator maxHeight="1.7976931348623157E308" maxWidth="10.0" minWidth="10.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="10.0" />
+                                                <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="90.0" minWidth="90.0" prefWidth="90.0" text="Repeat" />
+                                                <Separator maxHeight="1.7976931348623157E308" maxWidth="10.0" minWidth="10.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="10.0" />
+                                                <Label alignment="CENTER" maxHeight="1.7976931348623157E308" styleClass="labelSize70" text="Next in" />
+                                                <Pane maxHeight="1.7976931348623157E308" maxWidth="140.0" minWidth="140.0" prefWidth="140.0" HBox.hgrow="NEVER" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    <ScrollPane fx:id="paneReminders" VBox.vgrow="ALWAYS">
+                                       <content>
+                                          <VBox fx:id="containerReminder" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="100.0" minWidth="100.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <VBox layoutX="182.0" layoutY="178.0" prefHeight="516.0" prefWidth="589.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <ToolBar maxHeight="40.0" minHeight="40.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                                      <items>
+                                        <Button mnemonicParsing="false" onAction="#btnAddToDo" text="+" textAlignment="CENTER">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Button>
+                                          <Label text="ToDo List">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets left="10.0" />
+                                             </padding>
+                                          </Label>
+                                          <Label fx:id="txtToDoCounter" text="(1)">
+                                             <font>
+                                                <Font size="10.0" />
+                                             </font>
+                                          </Label>
+                                          <Pane prefHeight="30.0" prefWidth="32.0" />
+                                          <CheckBox fx:id="chckPriorityOnly" mnemonicParsing="false" onAction="#btnPriorityOnly" text="Priority only" />
+                                      </items>
+                                    </ToolBar>
+                                    <ScrollPane fx:id="paneToDo" VBox.vgrow="ALWAYS">
+                                       <content>
+                                          <VBox fx:id="containerToDo" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+                  <AnchorPane minHeight="100.0" minWidth="100.0">
+                     <children>
+                        <VBox prefHeight="361.0" prefWidth="1163.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <HBox VBox.vgrow="NEVER">
+                                 <children>
+                                    <ToolBar maxHeight="40.0" maxWidth="1.7976931348623157E308" prefHeight="40.0" HBox.hgrow="ALWAYS">
+                                      <items>
+                                        <Button mnemonicParsing="false" onAction="#btnAddEvent" text="+">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Button>
+                                          <Label text="Events">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets left="10.0" />
+                                             </padding>
+                                          </Label>
+                                          <Label fx:id="txtEventsCounter" text="(1)">
+                                             <font>
+                                                <Font size="10.0" />
+                                             </font>
+                                          </Label>
+                                          <Pane prefHeight="30.0" prefWidth="32.0" />
+                                          <ToggleButton mnemonicParsing="false" onAction="#btnToday" selected="true" text="Today">
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="eventGroup" />
+                                             </toggleGroup>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" onAction="#btnWeek" text="Week" toggleGroup="$eventGroup" />
+                                          <ToggleButton mnemonicParsing="false" onAction="#btnMonth" text="Month" toggleGroup="$eventGroup" />
+                                          <ToggleButton mnemonicParsing="false" onAction="#btnAll" text="All" toggleGroup="$eventGroup" />
+                                      </items>
+                                    </ToolBar>
+                                    <ToolBar prefHeight="40.0" prefWidth="105.0">
+                                      <items>
+                                        <Button fx:id="editButton" mnemonicParsing="false" onAction="#btnEdit" text="Edit" />
+                                          <Button fx:id="deteleButton" mnemonicParsing="false" onAction="#btnDelete" text="Delete" />
+                                      </items>
+                                    </ToolBar>
+                                 </children>
+                              </HBox>
+                              <HBox maxHeight="20.0" maxWidth="1.7976931348623157E308" minHeight="20.0" prefHeight="20.0" VBox.vgrow="NEVER">
+                                 <children>
+                                    <Label alignment="CENTER" maxHeight="1.7976931348623157E308" styleClass="labelDateTime" stylesheets="@components/ComponentStyles.css" text="Date">
+                                       <HBox.margin>
+                                          <Insets left="5.0" />
+                                       </HBox.margin></Label>
+                                    <Separator maxHeight="1.7976931348623157E308" maxWidth="10.0" minWidth="10.0" orientation="VERTICAL" prefWidth="10.0" />
+                                    <Label alignment="CENTER" maxHeight="1.7976931348623157E308" styleClass="labelDateTime" stylesheets="@components/ComponentStyles.css" text="Time" />
+                                    <Separator maxHeight="1.7976931348623157E308" maxWidth="10.0" minWidth="10.0" orientation="VERTICAL" prefWidth="10.0" />
+                                    <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" stylesheets="@components/ComponentStyles.css" text="Name" HBox.hgrow="ALWAYS" />
+                                    <Separator maxWidth="10.0" minWidth="10.0" orientation="VERTICAL" prefWidth="10.0" />
+                                    <Label alignment="CENTER" maxHeight="1.7976931348623157E308" styleClass="labelSize70" text="Repeat" />
+                                    <Separator maxHeight="1.7976931348623157E308" maxWidth="10.0" minWidth="10.0" orientation="VERTICAL" prefWidth="10.0" />
+                                    <Label alignment="CENTER" maxHeight="1.7976931348623157E308" styleClass="labelLocationComment" stylesheets="@components/ComponentStyles.css" text="Location" />
+                                    <Separator maxHeight="1.7976931348623157E308" maxWidth="10.0" minWidth="10.0" orientation="VERTICAL" prefWidth="10.0" />
+                                    <Label alignment="CENTER" maxHeight="1.7976931348623157E308" styleClass="labelLocationComment" stylesheets="@components/ComponentStyles.css" text="Comment">
+                                       <HBox.margin>
+                                          <Insets right="5.0" />
+                                       </HBox.margin></Label>
+                                 </children>
+                              </HBox>
+                              <ScrollPane fx:id="paneEvent" VBox.vgrow="ALWAYS">
+                                 <content>
+                                    <VBox fx:id="containerEvent" />
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+            <HBox maxHeight="25.0" minHeight="25.0" prefHeight="25.0">
+               <children>
+                  <Label fx:id="lblStatusIndicator" maxHeight="1.7976931348623157E308" text="!" textFill="RED">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="txtStatusDisplay" maxHeight="1.7976931348623157E308" prefHeight="25.0" prefWidth="619.0" text="status label">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

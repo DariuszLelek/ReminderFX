@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 18, 2017 10:13:10 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="hibernate.config.Reminder" table="reminder" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="Name" length="70" unique="true" />
+        </property>
+        <property name="weekDays" type="string">
+            <column name="WeekDays" length="10" />
+        </property>
+        <property name="active" type="string">
+            <column name="Active" length="1" />
+        </property>
+        <property name="timer" type="string">
+            <column name="Timer" length="45" />
+        </property>
+        <property name="repeatFrequency" type="string">
+            <column name="RepeatFrequency" length="45" />
+        </property>
+        <property name="lastTimeCompleted" type="timestamp">
+            <column name="LastTimeCompleted" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

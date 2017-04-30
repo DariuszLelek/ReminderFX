@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="516.0" prefWidth="615.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="reminder.windows.EventWindowFXMLController">
+   <children>
+      <VBox alignment="TOP_CENTER" layoutX="186.0" layoutY="20.0" prefHeight="516.0" prefWidth="783.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" text="Add new Event">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="txtName" alignment="CENTER" maxHeight="50.0" minHeight="50.0" prefHeight="50.0" promptText="enter event name">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtPlace" alignment="CENTER" maxHeight="50.0" minHeight="50.0" prefHeight="50.0" promptText="enter event place">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextField>
+            <HBox prefHeight="29.0" prefWidth="783.0">
+               <children>
+                  <VBox alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Event date:">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <DatePicker fx:id="fieldDate">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </VBox.margin>
+                        </DatePicker>
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Event time:">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <HBox alignment="TOP_CENTER" prefHeight="0.0" prefWidth="411.0" VBox.vgrow="NEVER">
+                           <children>
+                              <Label maxHeight="1.7976931348623157E308" text="Hours">
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </Label>
+                              <ChoiceBox fx:id="fieldHours" maxHeight="35.0" maxWidth="50.0" prefHeight="29.0" prefWidth="50.0" HBox.hgrow="NEVER">
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </HBox.margin>
+                              </ChoiceBox>
+                              <Label maxHeight="1.7976931348623157E308" text="Minutes">
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </Label>
+                              <ChoiceBox fx:id="fieldMinutes" maxWidth="50.0" prefHeight="35.0" prefWidth="50.0">
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </HBox.margin>
+                              </ChoiceBox>
+                           </children>
+                        </HBox>
+                        <Pane prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Label text="Comments:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin></Label>
+            <TextArea fx:id="txtComments" prefHeight="87.0" prefWidth="783.0" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextArea>
+            <Separator prefWidth="200.0">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </Separator>
+            <HBox alignment="TOP_CENTER" prefHeight="31.0" prefWidth="615.0">
+               <children>
+                  <RadioButton fx:id="btnRepeat" mnemonicParsing="false" onAction="#toggleRepeat" selected="true" text="Repeat">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="repeatGroup" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="btnOnlyOnce" mnemonicParsing="false" onAction="#toggleOnlyOnce" text="Only once" toggleGroup="$repeatGroup">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </RadioButton>
+               </children>
+            </HBox>
+            <HBox fx:id="repeatTogglePanel" alignment="TOP_CENTER" prefHeight="34.0" prefWidth="615.0">
+               <children>
+                  <ToggleButton fx:id="btnWeekly" maxWidth="80.0" mnemonicParsing="false" prefWidth="80.0" text="Weekly">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="repeatToggle" />
+                     </toggleGroup>
+                  </ToggleButton>
+                  <ToggleButton fx:id="btnMonthly" maxWidth="80.0" mnemonicParsing="false" prefWidth="80.0" text="Monthly" toggleGroup="$repeatToggle">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </ToggleButton>
+                  <ToggleButton fx:id="btnYearly" maxWidth="80.0" mnemonicParsing="false" prefWidth="80.0" text="Yearly" toggleGroup="$repeatToggle">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </ToggleButton>
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </Separator>
+            <HBox alignment="BOTTOM_CENTER" prefHeight="54.0" prefWidth="615.0" VBox.vgrow="NEVER">
+               <children>
+                  <Button maxWidth="80.0" minWidth="80.0" mnemonicParsing="false" onAction="#btnOk" prefWidth="80.0" text="OK">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets bottom="15.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button maxWidth="80.0" minWidth="80.0" mnemonicParsing="false" onAction="#btnCancel" prefWidth="80.0" text="Cancel">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets bottom="15.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

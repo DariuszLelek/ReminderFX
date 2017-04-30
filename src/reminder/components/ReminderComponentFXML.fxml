@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.*?>
+
+<AnchorPane fx:id="rootPane" styleClass="componentRootPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="reminder.components.ReminderComponentFXMLController">
+   <children>
+      <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <RadioButton fx:id="radioActive" maxHeight="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnRadioActive" stylesheets="@ComponentStyles.css">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="10.0" top="5.0" />
+               </HBox.margin>
+            </RadioButton>
+            <Label fx:id="txtName" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="labelName" text="Name" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblRepeat" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="90.0" minWidth="90.0" prefWidth="90.0" stylesheets="@ComponentStyles.css" text="M,Tu,W,Th,F,Su" HBox.hgrow="NEVER">
+               <HBox.margin>
+                  <Insets right="5.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="txtCounter" alignment="CENTER" contentDisplay="TOP" maxHeight="1.7976931348623157E308" styleClass="labelSize70" stylesheets="@ComponentStyles.css" text="00:00">
+               <HBox.margin>
+                  <Insets bottom="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Button fx:id="completeButton" disable="true" maxHeight="1.7976931348623157E308" maxWidth="75.0" minWidth="75.0" mnemonicParsing="false" onAction="#btnComplete" prefHeight="40.0" prefWidth="75.0" stylesheets="@ComponentStyles.css" text="Complete">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+            <Button maxHeight="1.7976931348623157E308" maxWidth="55.0" minWidth="55.0" mnemonicParsing="false" onAction="#btnDelete" prefWidth="55.0" styleClass="btnDelete" text="Delete">
+               <HBox.margin>
+                  <Insets bottom="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+   <stylesheets>
+       <URL value="@ComponentStyles.css" />
+   </stylesheets>
+</AnchorPane>
